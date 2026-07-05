@@ -44,10 +44,11 @@ X, y_true = load_exclastar()
 X = MinMaxScaler().fit_transform(X)
 
 clusterer = MCMSTStream(
-    W=270,        # sliding window width
+    W=190,        # sliding window width
     N=2,          # min points to define a micro-cluster
-    r=0.14,       # micro-cluster radius
+    r=0.23,       # micro-cluster radius
     n_micro=2,    # min micro-clusters to define a macro-cluster
+    dense_mc_promotion=True,
     random_state=42,
     keep_history=True,
 )
@@ -55,6 +56,8 @@ clusterer = MCMSTStream(
 # Process the stream point by point
 for point in X:
     clusterer.partial_fit(point)
+    clusterer.visualize(title="MCMSTStream on ExclaStar") # to see step-by-step visual redults
+    
 
 print("ARI = %.4f" % adjusted_rand_score(y_true, clusterer.history_labels_))
 ```

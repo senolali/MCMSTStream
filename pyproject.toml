@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mcmststream"
-version = "1.2.0"
+version = "1.2.1"
 description = "MCMSTStream: applying minimum spanning tree to KD-tree-based micro-clusters to define arbitrary-shaped clusters in streaming data"
 readme = "README.md"
 requires-python = ">=3.9"

@@ -12,4 +12,4 @@ from .core import MCMSTStream
 from .utils import load_exclastar
 
 __all__ = ["MCMSTStream", "load_exclastar"]
-__version__ = "1.2.1"
+__version__ = "1.2.2"

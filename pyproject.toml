@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcmststream"
+version = "1.1.0"
+description = "MCMSTStream: applying minimum spanning tree to KD-tree-based micro-clusters to define arbitrary-shaped clusters in streaming data"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Berfin Erdinç" },
+    { name = "Mahmut Kaya" },
+    { name = "Ali Şenol", email = "alisenol@tarsus.edu.tr" },
+]
+keywords = ["stream clustering", "streaming data", "minimum spanning tree", "kd-tree", "micro-cluster", "clustering"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.8",
+]
+
+[project.optional-dependencies]
+viz = ["matplotlib>=3.5"]
+dev = ["pytest", "scikit-learn", "matplotlib", "build", "twine"]
+
+[project.urls]
+Homepage = "https://github.com/senolali/MCMSTStream"
+Source = "https://github.com/senolali/MCMSTStream"
+Paper = "https://doi.org/10.1007/s00521-024-09443-1"
+Issues = "https://github.com/senolali/MCMSTStream/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mcmststream = ["data/*.txt"]

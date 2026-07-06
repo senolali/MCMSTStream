@@ -56,7 +56,7 @@ clusterer = MCMSTStream(
 # Process the stream point by point
 for point in X:
     clusterer.partial_fit(point)
-    clusterer.visualize(title="MCMSTStream on ExclaStar") # to see step-by-step visual redults
+    clusterer.visualize(title="MCMSTStream on ExclaStar") # to see step-by-step visual results
     
 
 print("ARI = %.4f" % adjusted_rand_score(y_true, clusterer.history_labels_))
